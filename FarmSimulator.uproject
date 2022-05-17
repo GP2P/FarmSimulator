@@ -19,6 +19,21 @@
 				"Mac",
 				"Linux"
 			]
+		},
+		{
+			"Name": "BlueprintAssist",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/9e895371fa3a471c87337860d6f341ff"
+		},
+		{
+			"Name": "FlatNodes",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/b719437f3fb54c259b34227363df8cab"
+		},
+		{
+			"Name": "RestartEditor",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/a00eb1e478ae4a8fb655aa22f9125b07"
 		}
 	]
 }
