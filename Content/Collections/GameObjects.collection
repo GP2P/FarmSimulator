@@ -5,3 +5,4 @@ ParentGuid:00000000-0000-0000-0000-000000000000
 Color:(R=0.109804,G=0.298039,B=0.576471,A=1.000000)
 
 /Game/GameObjects/Block/Object_Block.Object_Block
+/Game/GameObjects/Road/Object_Road.Object_Road
