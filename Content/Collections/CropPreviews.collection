@@ -3,4 +3,5 @@ Type:Static
 Guid:5D1A76D8-490D-FBA8-7096-799B7932476B
 ParentGuid:00000000-0000-0000-0000-000000000000
 
+/Game/GameObjects/FarmTile/Corn/CropPreview_Corn.CropPreview_Corn
 /Game/GameObjects/FarmTile/Object_CropPreview.Object_CropPreview
