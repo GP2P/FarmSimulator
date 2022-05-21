@@ -3,10 +3,10 @@ Type:Static
 Guid:5D1A76D8-490D-FBA8-7096-799B7932476B
 ParentGuid:00000000-0000-0000-0000-000000000000
 
-/Game/GameObjects/FarmTile/Bean/CropPreview_Bean.CropPreview_Bean
-/Game/GameObjects/FarmTile/Chilli/CropPreview_Chilli.CropPreview_Chilli
-/Game/GameObjects/FarmTile/Corn/CropPreview_Corn.CropPreview_Corn
-/Game/GameObjects/FarmTile/Hemp/CropPreview_Hemp.CropPreview_Hemp
+/Game/GameObjects/FarmTile/CropPreview_Bean.CropPreview_Bean
+/Game/GameObjects/FarmTile/CropPreview_Chilli.CropPreview_Chilli
+/Game/GameObjects/FarmTile/CropPreview_Corn.CropPreview_Corn
+/Game/GameObjects/FarmTile/CropPreview_Hemp.CropPreview_Hemp
+/Game/GameObjects/FarmTile/CropPreview_Pepper.CropPreview_Pepper
+/Game/GameObjects/FarmTile/CropPreview_Tomato.CropPreview_Tomato
 /Game/GameObjects/FarmTile/Object_CropPreview.Object_CropPreview
-/Game/GameObjects/FarmTile/Pepper/CropPreview_Pepper.CropPreview_Pepper
-/Game/GameObjects/FarmTile/Tomato/CropPreview_Tomato.CropPreview_Tomato
