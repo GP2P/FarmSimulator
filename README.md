@@ -6,6 +6,28 @@ Styled using the [Gamemakin UE5 Style Guide](https://github.com/Allar/ue5-style-
 changes like `EM` for Enumeration and `ST` for Structure.
 
 ----
+
+## AI System
+
+### Features
+
+Every NPC in the game is controlled by their own behavior tree and tries to find, reserve, navigate to, and work on their own tasks from a list of filterable avaliable tasks around them. It is not efficient for finding non-random farm tasks, but it is a trial of making AI systems.
+
+NPCs handle:
+- [ ] Building of game objects
+- [x] Harvesting of mature crops
+- [ ] Picking fruit from trees
+- [ ] Watering of crops
+
+### Technical Details
+
+- The task management system in-game uses Unreal Engine 5's newest beta testing feature - Smart Objects
+	- A Smart Object is spawned by Game Objects that offer tasks like matured farm tiles, and can be filtered and discovered by AI agents
+	- The avaliable agents scan around them and locate a random but closer object, and tries to reserve the slot. A slot can be claimed by multiple agents but only one reservation will be valid
+	- If reservation successed, the AI agent will navigate to the slot and get information from the Smart Object about how to operate it ("behavior")
+	- After the AI agent completed the behavior, or during the behavior when a notify completes the behavior early, additional code is triggered to make changes to the world as result of the "behavior" of the AI agent
+	- After a successful task search and completion, the AI agent searches again in 2 seconds to allow animations to complete etc. If the task searching or completion failed, the AI agent wait for 5 seconds to start another round of searching, to reduce average performance impact of the search
+
 ## Grid System
 
 ![Grid System](https://user-images.githubusercontent.com/73323107/169708290-ea0854b4-0a4f-4de9-99c1-45a1cafc1b2f.gif)
