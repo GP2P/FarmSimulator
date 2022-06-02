@@ -11,7 +11,7 @@ changes like `EM` for Enumeration and `ST` for Structure.
 
 ### Features
 
-Every NPC in the game is controlled by their own behavior tree and tries to find, reserve, navigate to, and work on their own tasks from a list of filterable avaliable tasks around them. It is not efficient for finding non-random farm tasks, but it is a trial of making AI systems.
+Every NPC in the game is controlled by their own behavior tree and tries to find, reserve, navigate to, and work on their own tasks from a list of filterable avaliable tasks around them. It is not efficient for finding non-random farm tasks, but it is a trial of making AI systems. Each NPC belong to a house and each house have a limit of max number of attachable NPCs. There is also a limit of max number of houses.
 
 NPCs handle:
 - [ ] Building of game objects
@@ -36,7 +36,6 @@ NPCs handle:
 
 - Place down objects in grid cells
 - Object will occupy cell preventing another placement
-- Grid cells are aware of nearby "neighbor" grid cells
 - Temporary: Select objects/crops to place with 1-9 keys
 - Show placement preview in placement mode
 	- Hints if placement is valid/invalid
@@ -53,19 +52,21 @@ NPCs handle:
 
 - Line trace for placement target each tick if in placement mode
 	- No actions if no change in calculated grid position
-- Grid Manager contains array of generated grid cell actors, Grid Count per row/column, and Cell Width
-- Grid Manager also acts like a function library for functions like getting closest Grid Cell or
-- Each Grid Cell keeps:
-	- Whether it is occupied
-	- Linked Game Object type enum
-	- Linked Game Object reference
-	- Neighboring Grid Cell references
-	- Grid Cell X and Y coordinates
+- Grid Manager contains array of ~~generated grid cell actors~~ Game Objects which index is the grid coordinates, Grid Count per row/column, and Cell Width
+- Grid Manager also acts like a function library for functions like getting closest Grid Cell position or converting grid coordinates to world coordinates
+- ~~Each Grid Cell keeps:~~
+	- ~~Whether it is occupied~~
+	- ~~Linked Game Object type enum~~
+	- ~~Linked Game Object reference~~
+	- ~~Neighboring Grid Cell references~~
+	- ~~Grid Cell X and Y coordinates~~
 - Each Game Object keeps:
-	- Linked Grid Cell reference
+	- ~~Linked Grid Cell reference~~
 	- Game Object type enum
-- Clickable component for Game Objects, if added, manage mouse hover and click
-- In Placement component for Game Objects, added to object placement previews, validifies object placement based on selected object/crop, changes mesh materials to hint valid/invalid placements
+	- Sizes in each direction
+	- Grid Coordinates
+- ~~Clickable component for Game Objects, if added, manage mouse hover and click~~ (migrated to Game Object Base)
+- ~~In Placement component for Game Objects, added to object placement previews, validifies object placement based on selected object/crop, changes mesh materials to hint valid/invalid placements~~ (migrated to Player Controller)
 
 ## Crops Sub-system
 
@@ -107,6 +108,7 @@ NPCs handle:
 	- Grid properties
 	- Basic Game Objects
 	- Planted Crops and Crop growth
+	- NPC locations and linked building coordinates
 	- Player transformations
 - Automatically load saved game
 - Deleating saved game
