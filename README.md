@@ -11,7 +11,9 @@ changes like `EM` for Enumeration and `ST` for Structure.
 
 ### Features
 
-Every NPC in the game is controlled by their own behavior tree and tries to find, reserve, navigate to, and work on their own tasks from a list of filterable avaliable tasks around them. It is not efficient for finding non-random farm tasks, but it is a trial of making AI systems. Each NPC belong to a house and each house have a limit of max number of attachable NPCs. There is also a limit of max number of houses.
+Every NPC in the game is controlled by their own behavior tree and has an assigned home building and a workplace building. Each NPC tries to find, reserve, navigate to, and work on their own tasks from a list of available tasks around them filtered by rules defined by their workplace.
+
+This system is core to the balancing of the game. Each NPC belongs to a house and each house has a limited number of attachable NPCs. There is also a limited number of houses and thus a limited amount of workers. House will be upgradable at the expense of resources, and the requirements will be more and more demanding/rare as the game progress.
 
 NPCs handle:
 - [ ] Building of game objects
@@ -21,12 +23,16 @@ NPCs handle:
 
 ### Technical Details
 
-- The task management system in-game uses Unreal Engine 5's newest beta testing feature - Smart Objects
-	- A Smart Object is spawned by Game Objects that offer tasks like matured farm tiles, and can be filtered and discovered by AI agents
-	- The avaliable agents scan around them and locate a random but closer object, and tries to reserve the slot. A slot can be claimed by multiple agents but only one reservation will be valid
-	- If reservation successed, the AI agent will navigate to the slot and get information from the Smart Object about how to operate it ("behavior")
-	- After the AI agent completed the behavior, or during the behavior when a notify completes the behavior early, additional code is triggered to make changes to the world as result of the "behavior" of the AI agent
-	- After a successful task search and completion, the AI agent searches again in 2 seconds to allow animations to complete etc. If the task searching or completion failed, the AI agent wait for 5 seconds to start another round of searching, to reduce average performance impact of the search
+This system is a personal trial of making complex AI systems. Although it is not the most efficient in finding and operating non-random farm tasks, it offers great modularity and customizability since all action definitions are individually separated in each behavior (work/task) and available behaviors for each worker are filtered by each workplace's rules.
+
+- The task management system in-game uses one of Unreal Engine 5's newest features in beta testing - "Smart Objects"
+	- An actor that contains a Smart Object component is spawned by Game Objects like farm tiles with matured crops. The Smart Object component contains a Smart Object Definition that contains a Gameplay Behavior Config which contains a Gameplay Behavior Class that offers tasks and can be discovered by AI agents based on their workplace's given filters (e.g. agents working at a farm building can execute behaviors (work/task) that involve a nearby farm tile)
+	- Available agents scan around them with a filter provided by their workplace and locate a random but closer object, and tries to reserve the slot. A slot can be claimed by multiple agents but only one reservation will be valid
+	- If the reservation succeeded, the AI agent will navigate to the slot and get information from the Smart Object about how to operate it ("behavior")
+	- After the AI agent completed the behavior, or during the behavior when a notify completes the behavior early, additional code is triggered to make changes  to the world as a result of the "behavior" of the AI agent
+	- After a successful task search and completion, the AI agent searches again in 2 seconds to allow animations to complete etc. If the task searching or completion failed, the AI agent waits for 5 seconds to start another round of searching, to reduce the average performance impact of the search
+
+<img width="755" alt="Screen Shot 2022-06-19 at 11 16 10 PM" src="https://user-images.githubusercontent.com/73323107/174519271-05bd28d7-b115-4186-be1d-aa59888c62be.png">
 
 ## Grid System
 
