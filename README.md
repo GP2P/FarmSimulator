@@ -1,11 +1,14 @@
 # FarmSimulator
 
-Developed by G3P with Unreal Engine 5, using assets from the Unreal Marketplace.
+Developed by G3P with Unreal Engine 5, using art assets from the Unreal Marketplace. Styled using the [Gamemakin UE5 Style Guide](https://github.com/Allar/ue5-style-guide)
 
-Styled using the [Gamemakin UE5 Style Guide](https://github.com/Allar/ue5-style-guide), with some naming convention
-changes like `EM` for Enumeration and `ST` for Structure.
-
-----
+### Table of Contents
+- [FarmSimulator](https://github.com/GP2P/FarmSimulator#farmsimulator)
+  - [AI System](https://github.com/GP2P/FarmSimulator#ai-system)
+  - [Grid System](https://github.com/GP2P/FarmSimulator#grid-system)
+  - [Crops Sub-system](https://github.com/GP2P/FarmSimulator#crops-sub-system)
+  - [Save Game System](https://github.com/GP2P/FarmSimulator#save-game-system)
+  - [Camera Controller](https://github.com/GP2P/FarmSimulator#camera-controller)
 
 ## AI System
 
