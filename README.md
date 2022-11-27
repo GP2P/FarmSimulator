@@ -9,6 +9,8 @@ changes like `EM` for Enumeration and `ST` for Structure.
 
 ## AI System
 
+![AI System](https://user-images.githubusercontent.com/73323107/204152196-62b70dc4-b8df-47fb-b75b-53ce0a559e28.gif)
+
 ### Features
 
 Every NPC in the game is controlled by their own behavior tree and has an assigned home building and a workplace building. Each NPC tries to find, reserve, navigate to, and work on their own tasks from a list of available tasks around them filtered by rules defined by their workplace.
@@ -23,7 +25,7 @@ NPCs handle:
 
 ### Technical Details
 
-This system is a personal trial of making complex AI systems. Although it is not the most efficient in finding and operating non-random farm tasks, it offers great modularity and customizability since all action definitions are individually separated in each behavior (work/task) and available behaviors for each worker are filtered by each workplace's rules.
+This system is a personal trial of implementing complex AI systems in factory management games. Although it is not as efficient in finding and operating non-random farm tasks compared to centrally controlled AI traditionally used in management games, this system offers great scalability, modularity and customizability since all action definitions are individually separated in each behavior (work/task) and available behaviors for each worker are filtered by each workplace's rules. This creates a boilerplate system that enables mod creators to extend the AI system easily.
 
 - The task management system in-game uses one of Unreal Engine 5's newest features in beta testing - "Smart Objects"
 	- An actor that contains a Smart Object component is spawned by Game Objects like farm tiles with matured crops. The Smart Object component contains a Smart Object Definition that contains a Gameplay Behavior Config which contains a Gameplay Behavior Class that offers tasks and can be discovered by AI agents based on their workplace's given filters (e.g. agents working at a farm building can execute behaviors (work/task) that involve a nearby farm tile)
