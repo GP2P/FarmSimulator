@@ -148,6 +148,10 @@ This system is a personal trial of implementing complex AI systems in factory ma
 	- Start Crop Manager growth
 - Each crop plant's random transformation will be regenerated randomly
 
+### TODO
+
+- Save file versioning for forward-compatibility
+
 ## Camera Controller
 
 ### Features
